@@ -1,0 +1,154 @@
+{
+  "info": {
+    "name": "FlavorDash API",
+    "description": "API documentation untuk FlavorDash - Katalog Makanan",
+    "version": "1.0.0",
+    "baseUrl": "http://localhost:3000"
+  },
+  "auth": [
+    {
+      "type": "bearer",
+      "key": "Authorization",
+      "value": "Bearer {{accessToken}}"
+    }
+  ],
+  "endpoints": {
+    "auth": [
+      {
+        "name": "Login",
+        "method": "POST",
+        "url": "{{baseUrl}}/auth/login",
+        "description": "Login user dengan email dan password",
+        "body": {
+          "email": "user@example.com",
+          "password": "password123"
+        },
+        "expectedResponse": 200
+      },
+      {
+        "name": "Refresh Token",
+        "method": "POST",
+        "url": "{{baseUrl}}/auth/refresh",
+        "description": "Refresh access token menggunakan refresh token",
+        "body": {
+          "refreshToken": "{{refreshToken}}"
+        },
+        "expectedResponse": 200
+      },
+      {
+        "name": "Logout",
+        "method": "POST",
+        "url": "{{baseUrl}}/auth/logout",
+        "description": "Logout user",
+        "headers": {
+          "Authorization": "Bearer {{accessToken}}"
+        },
+        "expectedResponse": 200
+      }
+    ],
+    "products": [
+      {
+        "name": "Get All Products",
+        "method": "GET",
+        "url": "{{baseUrl}}/products",
+        "description": "Dapatkan semua produk",
+        "queryParams": {
+          "_limit": 10,
+          "_page": 1,
+          "_sort": "name",
+          "_order": "asc"
+        },
+        "expectedResponse": 200
+      },
+      {
+        "name": "Get Product Detail",
+        "method": "GET",
+        "url": "{{baseUrl}}/products/prod-001",
+        "description": "Dapatkan detail produk berdasarkan ID",
+        "expectedResponse": 200
+      },
+      {
+        "name": "Filter Products by Category",
+        "method": "GET",
+        "url": "{{baseUrl}}/products?category=Masakan%20Tradisional",
+        "description": "Filter produk berdasarkan kategori",
+        "expectedResponse": 200
+      }
+    ],
+    "orders": [
+      {
+        "name": "Get Orders",
+        "method": "GET",
+        "url": "{{baseUrl}}/orders",
+        "description": "Dapatkan daftar order user (memerlukan authentication)",
+        "headers": {
+          "Authorization": "Bearer {{accessToken}}"
+        },
+        "expectedResponse": 200
+      },
+      {
+        "name": "Get Order Detail",
+        "method": "GET",
+        "url": "{{baseUrl}}/orders/order-001",
+        "description": "Dapatkan detail order berdasarkan ID",
+        "headers": {
+          "Authorization": "Bearer {{accessToken}}"
+        },
+        "expectedResponse": 200
+      },
+      {
+        "name": "Create Order",
+        "method": "POST",
+        "url": "{{baseUrl}}/orders",
+        "description": "Buat order baru",
+        "headers": {
+          "Authorization": "Bearer {{accessToken}}"
+        },
+        "body": {
+          "userId": "user-001",
+          "items": [
+            {
+              "productId": "prod-001",
+              "quantity": 2
+            }
+          ],
+          "deliveryAddress": "Jl. Merdeka No. 123, Jakarta Selatan",
+          "deliveryPhone": "+62812345678",
+          "paymentMethod": "Credit Card"
+        },
+        "expectedResponse": 201
+      },
+      {
+        "name": "Update Order",
+        "method": "PUT",
+        "url": "{{baseUrl}}/orders/order-001",
+        "description": "Update status order",
+        "headers": {
+          "Authorization": "Bearer {{accessToken}}"
+        },
+        "body": {
+          "status": "confirmed"
+        },
+        "expectedResponse": 200
+      }
+    ],
+    "categories": [
+      {
+        "name": "Get Categories",
+        "method": "GET",
+        "url": "{{baseUrl}}/categories",
+        "description": "Dapatkan semua kategori produk",
+        "expectedResponse": 200
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Get Reviews",
+        "method": "GET",
+        "url": "{{baseUrl}}/reviews?productId=prod-001",
+        "description": "Dapatkan review produk",
+        "expectedResponse": 200
+      }
+    ]
+  }
+}

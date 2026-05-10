@@ -1,0 +1,14 @@
+{
+    "/auth/login": "/auth/tokens?_embed=user",
+    "/auth/refresh": "/auth/tokens?_embed=user",
+    "/auth/logout": "/auth/tokens",
+    "/api/v1/products": "/products",
+    "/api/v1/products/:id": "/products/:id",
+    "/api/v1/orders": "/orders",
+    "/api/v1/orders/:id": "/orders/:id",
+    "/api/v1/orders/:id/items": "/orders/:id/items",
+    "/api/v1/users/:id": "/users/:id",
+    "/api/v1/users/:id/orders": "/orders?userId=:id",
+    "/api/v1/categories": "/categories",
+    "/api/v1/reviews": "/reviews"
+}

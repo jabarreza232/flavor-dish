@@ -1,0 +1,390 @@
+{
+  "users": [
+    {
+      "id": "user-001",
+      "email": "user@example.com",
+      "password": "password123",
+      "name": "John Doe",
+      "phone": "+62812345678",
+      "address": "Jl. Merdeka No. 123, Jakarta Selatan"
+    }
+  ],
+  "tokens": [
+    {
+      "id": "token-001",
+      "userId": "user-001",
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyLTAwMSIsImlhdCI6MTY5MDAwMDAwMCwiZXhwIjoxNjkwMDg2NDAwfQ.sflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "refreshToken": "refresh_token_mock_user_001_long_lived_1234567890",
+      "expiresAt": "2026-05-09T11:15:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Rendang Ayam Premium",
+      "category": "Masakan Tradisional",
+      "description": "Rendang ayam tradisional dengan bumbu kaya rasa yang autentik",
+      "price": 45000,
+      "originalPrice": 50000,
+      "discount": 10,
+      "image": "https://via.placeholder.com/300x300?text=Rendang+Ayam",
+      "thumbnail": "https://via.placeholder.com/120x120?text=Rendang",
+      "rating": 4.8,
+      "reviews": 152,
+      "inStock": true,
+      "quantity": 50,
+      "prepTime": 20,
+      "servings": 4,
+      "ingredients": [
+        "Ayam 1kg",
+        "Santan 400ml",
+        "Cabe merah 8 buah",
+        "Bawang merah 10 siung",
+        "Kunyit 2 ruas",
+        "Garam secukupnya"
+      ],
+      "nutrition": {
+        "calories": 280,
+        "protein": 35,
+        "carbs": 5,
+        "fat": 12
+      },
+      "tags": [
+        "spicy",
+        "traditional",
+        "chicken"
+      ],
+      "createdAt": "2026-01-10T08:00:00Z",
+      "updatedAt": "2026-05-09T10:00:00Z"
+    },
+    {
+      "id": "prod-002",
+      "name": "Soto Ayam Kuning",
+      "category": "Sup & Kuah",
+      "description": "Soto ayam dengan kunyit dan jahe pilihan, resep turun temurun",
+      "price": 35000,
+      "originalPrice": 35000,
+      "discount": 0,
+      "image": "https://via.placeholder.com/300x300?text=Soto+Ayam",
+      "thumbnail": "https://via.placeholder.com/120x120?text=SotoAyam",
+      "rating": 4.5,
+      "reviews": 98,
+      "inStock": true,
+      "quantity": 75,
+      "prepTime": 15,
+      "servings": 2,
+      "ingredients": [
+        "Ayam 500g",
+        "Kunyit 3 ruas",
+        "Jahe 2 ruas",
+        "Bawang merah 8 siung",
+        "Kaldu ayam 1 liter",
+        "Garam & merica"
+      ],
+      "nutrition": {
+        "calories": 150,
+        "protein": 20,
+        "carbs": 8,
+        "fat": 4
+      },
+      "tags": [
+        "soup",
+        "warm",
+        "comforting"
+      ],
+      "createdAt": "2026-01-12T08:00:00Z",
+      "updatedAt": "2026-05-09T09:45:00Z"
+    },
+    {
+      "id": "prod-003",
+      "name": "Gado-Gado Spesial",
+      "category": "Sayuran",
+      "description": "Gado-gado dengan kacang dan saus gurih yang nikmat",
+      "price": 28000,
+      "originalPrice": 32000,
+      "discount": 12,
+      "image": "https://via.placeholder.com/300x300?text=Gado+Gado",
+      "thumbnail": "https://via.placeholder.com/120x120?text=GadoGado",
+      "rating": 4.7,
+      "reviews": 124,
+      "inStock": true,
+      "quantity": 100,
+      "prepTime": 10,
+      "servings": 1,
+      "ingredients": [
+        "Kacang tanah 200g",
+        "Tahu 150g",
+        "Telur 1 butir",
+        "Sayuran segar",
+        "Cabai & bawang",
+        "Gula & garam"
+      ],
+      "nutrition": {
+        "calories": 220,
+        "protein": 15,
+        "carbs": 18,
+        "fat": 10
+      },
+      "tags": [
+        "vegetable",
+        "healthy",
+        "savory"
+      ],
+      "createdAt": "2026-01-15T08:00:00Z",
+      "updatedAt": "2026-05-09T10:30:00Z"
+    },
+    {
+      "id": "prod-004",
+      "name": "Nasi Kuning Festive",
+      "category": "Nasi & Carbs",
+      "description": "Nasi kuning dengan telur dadar dan lauk kaya rasa",
+      "price": 32000,
+      "originalPrice": 38000,
+      "discount": 16,
+      "image": "https://via.placeholder.com/300x300?text=Nasi+Kuning",
+      "thumbnail": "https://via.placeholder.com/120x120?text=NasiKuning",
+      "rating": 4.6,
+      "reviews": 87,
+      "inStock": true,
+      "quantity": 60,
+      "prepTime": 25,
+      "servings": 2,
+      "ingredients": [
+        "Beras 300g",
+        "Santan 200ml",
+        "Kunyit 2 ruas",
+        "Bawang putih 4 siung",
+        "Telur 2 butir",
+        "Garam & kaldu"
+      ],
+      "nutrition": {
+        "calories": 320,
+        "protein": 12,
+        "carbs": 48,
+        "fat": 8
+      },
+      "tags": [
+        "rice",
+        "festive",
+        "aromatic"
+      ],
+      "createdAt": "2026-02-01T08:00:00Z",
+      "updatedAt": "2026-05-09T11:00:00Z"
+    },
+    {
+      "id": "prod-005",
+      "name": "Satay Daging Premium",
+      "category": "Daging",
+      "description": "Sate daging sapi premium dengan bumbu kacang authentic",
+      "price": 55000,
+      "originalPrice": 65000,
+      "discount": 15,
+      "image": "https://via.placeholder.com/300x300?text=Sate+Daging",
+      "thumbnail": "https://via.placeholder.com/120x120?text=SateDaging",
+      "rating": 4.9,
+      "reviews": 203,
+      "inStock": true,
+      "quantity": 40,
+      "prepTime": 30,
+      "servings": 4,
+      "ingredients": [
+        "Daging sapi 600g",
+        "Kacang tanah 250g",
+        "Cabe merah 5 buah",
+        "Bawang merah 8 siung",
+        "Gula & garam",
+        "Lada hitam"
+      ],
+      "nutrition": {
+        "calories": 380,
+        "protein": 40,
+        "carbs": 12,
+        "fat": 18
+      },
+      "tags": [
+        "beef",
+        "grilled",
+        "premium"
+      ],
+      "createdAt": "2026-02-10T08:00:00Z",
+      "updatedAt": "2026-05-09T10:45:00Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-001",
+      "orderId": "ORDER-2026-001",
+      "userId": "user-001",
+      "status": "confirmed",
+      "items": [
+        {
+          "productId": "prod-001",
+          "productName": "Rendang Ayam Premium",
+          "quantity": 2,
+          "price": 45000,
+          "subtotal": 90000
+        },
+        {
+          "productId": "prod-002",
+          "productName": "Soto Ayam Kuning",
+          "quantity": 1,
+          "price": 35000,
+          "subtotal": 35000
+        }
+      ],
+      "subtotal": 125000,
+      "tax": 12500,
+      "shippingCost": 10000,
+      "totalAmount": 147500,
+      "paymentMethod": "Credit Card",
+      "paymentStatus": "paid",
+      "deliveryAddress": "Jl. Merdeka No. 123, Jakarta Selatan",
+      "deliveryPhone": "+62812345678",
+      "notes": "Tolong dipanaskan ulang sebelum diantar",
+      "estimatedDelivery": "2026-05-10T14:00:00Z",
+      "createdAt": "2026-05-09T10:30:00Z",
+      "updatedAt": "2026-05-09T10:35:00Z"
+    },
+    {
+      "id": "order-002",
+      "orderId": "ORDER-2026-002",
+      "userId": "user-001",
+      "status": "processing",
+      "items": [
+        {
+          "productId": "prod-004",
+          "productName": "Nasi Kuning Festive",
+          "quantity": 1,
+          "price": 32000,
+          "subtotal": 32000
+        },
+        {
+          "productId": "prod-003",
+          "productName": "Gado-Gado Spesial",
+          "quantity": 2,
+          "price": 28000,
+          "subtotal": 56000
+        }
+      ],
+      "subtotal": 88000,
+      "tax": 8800,
+      "shippingCost": 8000,
+      "totalAmount": 104800,
+      "paymentMethod": "E-Wallet",
+      "paymentStatus": "paid",
+      "deliveryAddress": "Jl. Merdeka No. 123, Jakarta Selatan",
+      "deliveryPhone": "+62812345678",
+      "notes": "Paket untuk keluarga, tolong dipacking rapi",
+      "estimatedDelivery": "2026-05-10T18:00:00Z",
+      "createdAt": "2026-05-08T14:20:00Z",
+      "updatedAt": "2026-05-09T08:00:00Z"
+    },
+    {
+      "id": "order-003",
+      "orderId": "ORDER-2026-003",
+      "userId": "user-001",
+      "status": "completed",
+      "items": [
+        {
+          "productId": "prod-005",
+          "productName": "Satay Daging Premium",
+          "quantity": 4,
+          "price": 55000,
+          "subtotal": 220000
+        }
+      ],
+      "subtotal": 220000,
+      "tax": 22000,
+      "shippingCost": 15000,
+      "totalAmount": 257000,
+      "paymentMethod": "Bank Transfer",
+      "paymentStatus": "paid",
+      "deliveryAddress": "Jl. Merdeka No. 123, Jakarta Selatan",
+      "deliveryPhone": "+62812345678",
+      "notes": "Untuk acara keluarga, terima kasih",
+      "estimatedDelivery": "2026-05-07T16:00:00Z",
+      "deliveredAt": "2026-05-07T15:45:00Z",
+      "createdAt": "2026-05-06T11:00:00Z",
+      "updatedAt": "2026-05-07T16:00:00Z"
+    },
+    {
+      "id": "order-004",
+      "orderId": "ORDER-2026-004",
+      "userId": "user-001",
+      "status": "pending",
+      "items": [
+        {
+          "productId": "prod-001",
+          "productName": "Rendang Ayam Premium",
+          "quantity": 1,
+          "price": 45000,
+          "subtotal": 45000
+        }
+      ],
+      "subtotal": 45000,
+      "tax": 4500,
+      "shippingCost": 8000,
+      "totalAmount": 57500,
+      "paymentMethod": "Credit Card",
+      "paymentStatus": "pending",
+      "deliveryAddress": "Jl. Merdeka No. 123, Jakarta Selatan",
+      "deliveryPhone": "+62812345678",
+      "notes": "Belum dikonfirmasi oleh restaurant",
+      "estimatedDelivery": "2026-05-11T12:00:00Z",
+      "createdAt": "2026-05-09T11:50:00Z",
+      "updatedAt": "2026-05-09T11:50:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-001",
+      "productId": "prod-001",
+      "userId": "user-001",
+      "rating": 5,
+      "title": "Enak banget!",
+      "comment": "Rendang ayamnya sangat lezat dan bumbu meresap sempurna. Recommended!",
+      "createdAt": "2026-05-05T10:00:00Z"
+    },
+    {
+      "id": "review-002",
+      "productId": "prod-002",
+      "userId": "user-002",
+      "rating": 4,
+      "title": "Soto yang hangat dan lezat",
+      "comment": "Rasanya autentik, meskipun topping telur bisa lebih banyak",
+      "createdAt": "2026-05-04T15:30:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-001",
+      "name": "Masakan Tradisional",
+      "icon": "🍲",
+      "description": "Masakan nusantara autentik turun temurun"
+    },
+    {
+      "id": "cat-002",
+      "name": "Sup & Kuah",
+      "icon": "🥣",
+      "description": "Berbagai macam sup dan kuah hangat"
+    },
+    {
+      "id": "cat-003",
+      "name": "Sayuran",
+      "icon": "🥬",
+      "description": "Menu sayuran sehat dan bergizi"
+    },
+    {
+      "id": "cat-004",
+      "name": "Nasi & Carbs",
+      "icon": "🍚",
+      "description": "Berbagai pilihan nasi dan carbohydrates"
+    },
+    {
+      "id": "cat-005",
+      "name": "Daging",
+      "icon": "🍖",
+      "description": "Menu daging berkualitas premium"
+    }
+  ]
+}
