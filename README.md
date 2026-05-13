@@ -48,3 +48,21 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Run Mock API
+Proyek ini menggunakan JSON Server untuk menyediakan mock data selama pengembangan.
+
+Install dependencies (jika belum):
+
+```Bash
+npm install json-server
+Jalankan Mock API:
+```
+
+```Bash
+npm run mock-api
+Server akan berjalan di http://localhost:3000 atau IP lokal kamu.
+```
+Endpoint:
+```bash
+Data Product: http://localhost:3000/products
+```

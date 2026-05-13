@@ -1,48 +1,49 @@
 import { Ionicons } from '@expo/vector-icons';
-import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet, SafeAreaView } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View, Text, FlatList, Image, StyleSheet, SafeAreaView, Alert, Platform } from 'react-native';
 import { useApp } from '../context/AppContext';
 import { Product } from '../product';
+import { useRouter, useFocusEffect } from 'expo-router';
 
 export default function WishlistScreen() {
     // Harusnya ambil dari Global State / Context / API
-
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
     const { wishlist } = useApp();
-    const allProducts: Product[] = [
-        {
-            id: '1',
-            name: 'Rendang Sapi Premium',
-            description: 'Daging empuk bumbu rempah melimpah.',
-            price: 45000,
-            image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=400',
-            rating: 4.8,
-        },
-        {
-            id: '2',
-            name: 'Soto Ayam Kuning',
-            description: 'Segar dengan koya dan ayam kampung.',
-            price: 35000,
-            image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=400',
-            rating: 4.5,
-        },
-        {
-            id: '3',
-            name: 'Salad Sayur Organik',
-            description: 'Sayuran hidroponik & saus wijen.',
-            price: 28000,
-            image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400',
-            rating: 4.7,
-        },
-        {
-            id: '4',
-            name: 'Nasi Goreng Spesial',
-            description: 'Dilengkapi telur mata sapi dan sate.',
-            price: 32000,
-            image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=400',
-            rating: 4.9,
+
+    const fetchCartProducts = useCallback(async () => {
+        try {
+            setLoading(true);
+
+            // Penyesuaian IP untuk Android Emulator (10.0.2.2) atau iOS/Web (localhost)
+            const apiUrl = Platform.OS === 'android'
+                ? 'http://10.0.2.2:3000/products'
+                : 'http://localhost:3000/products';
+
+            const response = await fetch(apiUrl);
+
+            if (!response.ok) {
+                throw new Error('Gagal memuat produk');
+            }
+
+            const data = await response.json();
+            const productsList = data.products ? data.products : data;
+            const favoriteProducts = productsList.filter(p => wishlist.includes(p.id));
+            setProducts(favoriteProducts);
+        } catch (error) {
+            console.error('Fetch error di keranjang:', error);
+            Alert.alert('Error', 'Gagal menyinkronkan data keranjang');
+        } finally {
+            setLoading(false);
         }
-    ];
-    const favoriteProducts = allProducts.filter(p => wishlist.includes(p.id));
+    }, []);
+
+    // Gunakan useFocusEffect agar data selalu ter-refresh setiap kali user membuka tab Keranjang
+    useFocusEffect(
+        useCallback(() => {
+            fetchCartProducts();
+        }, [fetchCartProducts])
+    );
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
@@ -50,7 +51,7 @@ export default function WishlistScreen() {
             </View>
 
             <FlatList
-                data={favoriteProducts}
+                data={products}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.wishlistCard}>
