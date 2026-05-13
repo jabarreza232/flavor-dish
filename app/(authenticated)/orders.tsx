@@ -11,6 +11,7 @@ import {
   SafeAreaView,
   FlatList,
   Dimensions,
+  TextInput, // Perbaikan: Import TextInput ditambahkan
 } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -79,27 +80,9 @@ export default function OrdersScreen() {
           orderId: 'ORDER-2026-001',
           status: 'completed',
           items: [
-            {
-              productId: '1',
-              name: 'Rendang Ayam Premium',
-              quantity: 2,
-              price: 45000,
-              subtotal: 90000,
-            },
-            {
-              productId: '2',
-              name: 'Soto Ayam Kuning',
-              quantity: 1,
-              price: 35000,
-              subtotal: 35000,
-            },
-            {
-              productId: '3',
-              name: 'Nasi Kuning',
-              quantity: 1,
-              price: 22500,
-              subtotal: 22500,
-            },
+            { productId: '1', name: 'Rendang Ayam Premium', quantity: 2, price: 45000, subtotal: 90000 },
+            { productId: '2', name: 'Soto Ayam Kuning', quantity: 1, price: 35000, subtotal: 35000 },
+            { productId: '3', name: 'Nasi Kuning', quantity: 1, price: 22500, subtotal: 22500 },
           ],
           totalAmount: 147500,
           createdAt: '2026-05-09T10:30:00Z',
@@ -111,20 +94,8 @@ export default function OrdersScreen() {
           orderId: 'ORDER-2026-002',
           status: 'processing',
           items: [
-            {
-              productId: '4',
-              name: 'Gado-Gado Spesial',
-              quantity: 2,
-              price: 28000,
-              subtotal: 56000,
-            },
-            {
-              productId: '5',
-              name: 'Perkedel Crispy',
-              quantity: 3,
-              price: 16000,
-              subtotal: 48000,
-            },
+            { productId: '4', name: 'Gado-Gado Spesial', quantity: 2, price: 28000, subtotal: 56000 },
+            { productId: '5', name: 'Perkedel Crispy', quantity: 3, price: 16000, subtotal: 48000 },
           ],
           totalAmount: 104800,
           createdAt: '2026-05-08T14:20:00Z',
@@ -136,20 +107,8 @@ export default function OrdersScreen() {
           orderId: 'ORDER-2026-003',
           status: 'confirmed',
           items: [
-            {
-              productId: '2',
-              name: 'Soto Ayam Kuning',
-              quantity: 2,
-              price: 35000,
-              subtotal: 70000,
-            },
-            {
-              productId: '3',
-              name: 'Nasi Kuning',
-              quantity: 2,
-              price: 22500,
-              subtotal: 45000,
-            },
+            { productId: '2', name: 'Soto Ayam Kuning', quantity: 2, price: 35000, subtotal: 70000 },
+            { productId: '3', name: 'Nasi Kuning', quantity: 2, price: 22500, subtotal: 45000 },
           ],
           totalAmount: 115000,
           createdAt: '2026-05-07T11:10:00Z',
@@ -161,13 +120,7 @@ export default function OrdersScreen() {
           orderId: 'ORDER-2026-004',
           status: 'pending',
           items: [
-            {
-              productId: '1',
-              name: 'Rendang Ayam Premium',
-              quantity: 1,
-              price: 45000,
-              subtotal: 45000,
-            },
+            { productId: '1', name: 'Rendang Ayam Premium', quantity: 1, price: 45000, subtotal: 45000 },
           ],
           totalAmount: 45000,
           createdAt: '2026-05-06T16:45:00Z',
@@ -179,20 +132,8 @@ export default function OrdersScreen() {
           orderId: 'ORDER-2026-005',
           status: 'completed',
           items: [
-            {
-              productId: '5',
-              name: 'Satay Daging Premium',
-              quantity: 3,
-              price: 55000,
-              subtotal: 165000,
-            },
-            {
-              productId: '2',
-              name: 'Soto Ayam Kuning',
-              quantity: 1,
-              price: 35000,
-              subtotal: 35000,
-            },
+            { productId: '5', name: 'Satay Daging Premium', quantity: 3, price: 55000, subtotal: 165000 },
+            { productId: '2', name: 'Soto Ayam Kuning', quantity: 1, price: 35000, subtotal: 35000 },
           ],
           totalAmount: 200000,
           createdAt: '2026-05-05T18:20:00Z',
@@ -204,13 +145,7 @@ export default function OrdersScreen() {
           orderId: 'ORDER-2026-006',
           status: 'cancelled',
           items: [
-            {
-              productId: '3',
-              name: 'Nasi Kuning',
-              quantity: 1,
-              price: 22500,
-              subtotal: 22500,
-            },
+            { productId: '3', name: 'Nasi Kuning', quantity: 1, price: 22500, subtotal: 22500 },
           ],
           totalAmount: 22500,
           createdAt: '2026-05-04T12:00:00Z',
@@ -236,12 +171,10 @@ export default function OrdersScreen() {
   const applyFiltersAndSort = () => {
     let filtered = [...orders];
 
-    // Apply status filter
     if (selectedFilter !== 'all') {
       filtered = filtered.filter((order) => order.status === selectedFilter);
     }
 
-    // Apply search filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -251,7 +184,6 @@ export default function OrdersScreen() {
       );
     }
 
-    // Apply sorting
     switch (selectedSort) {
       case 'newest':
         filtered.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
@@ -382,7 +314,7 @@ export default function OrdersScreen() {
       )}
 
       {/* Filter Tabs */}
-      <ScrollView
+     <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.filterTabsContainer}
@@ -399,6 +331,7 @@ export default function OrdersScreen() {
               onPress={() => setSelectedFilter(filter)}
             >
               <Text
+                numberOfLines={1} // Mencegah teks terlipat jadi 2 baris
                 style={[
                   styles.filterTabText,
                   selectedFilter === filter && styles.filterTabTextActive,
@@ -451,8 +384,15 @@ interface TextInputComponentProps {
 function TextInputComponent({ placeholder, value, onChangeText }: TextInputComponentProps) {
   return (
     <View style={styles.textInputWrapper}>
-      {/* Import TextInput dari react-native */}
-      <Text style={styles.textInputPlaceholder}>{placeholder}</Text>
+      {/* Perbaikan: Mengganti <Text> menjadi <TextInput> agar bisa diketik */}
+      <TextInput
+        style={styles.textInput}
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChangeText}
+        placeholderTextColor="#999999"
+        autoCapitalize="none"
+      />
     </View>
   );
 }
@@ -472,7 +412,6 @@ function OrderCard({ order, statusColor, statusLabel, statusIcon, onPress }: Ord
 
   return (
     <TouchableOpacity style={styles.orderCard} onPress={onPress}>
-      {/* Top Section - Header Info */}
       <View style={styles.orderCardTop}>
         <View style={styles.orderCardTopLeft}>
           <Text style={styles.orderNumber}>{order.orderId}</Text>
@@ -497,7 +436,6 @@ function OrderCard({ order, statusColor, statusLabel, statusIcon, onPress }: Ord
         </View>
       </View>
 
-      {/* Middle Section - Items */}
       <View style={styles.orderCardMiddle}>
         <View style={styles.itemPreview}>
           <MaterialCommunityIcons name="clipboard-list" size={16} color="#FF6B35" />
@@ -509,7 +447,6 @@ function OrderCard({ order, statusColor, statusLabel, statusIcon, onPress }: Ord
         </Text>
       </View>
 
-      {/* Bottom Section - Amount & Arrow */}
       <View style={styles.orderCardBottom}>
         <View>
           <Text style={styles.totalLabel}>Total Pesanan</Text>
@@ -534,7 +471,6 @@ function OrderCard({ order, statusColor, statusLabel, statusIcon, onPress }: Ord
         </View>
       </View>
 
-      {/* Chevron Right */}
       <View style={styles.chevronContainer}>
         <MaterialCommunityIcons name="chevron-right" size={24} color="#CCCCCC" />
       </View>
@@ -631,9 +567,12 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
   },
-  textInputPlaceholder: {
+  // Perbaikan: Penambahan style baru khusus untuk komponen TextInput
+  textInput: {
+    flex: 1,
     fontSize: 13,
-    color: '#999999',
+    color: '#1A1A1A',
+    paddingVertical: 0, // Penting di Android agar teks tidak terpotong
   },
   sortButton: {
     width: 40,
@@ -676,29 +615,34 @@ const styles = StyleSheet.create({
   },
 
   // Filter Tabs
-  filterTabsContainer: {
+ filterTabsContainer: {
     backgroundColor: '#FFFFFF',
-    paddingVertical: 8,
+    paddingVertical: 10, 
     borderBottomWidth: 1,
     borderBottomColor: '#F0F0F0',
+    flexGrow: 0, // Pastikan container tab tidak tertekan atau melar
   },
   filterTabsContent: {
     paddingHorizontal: '5%',
-    gap: 8,
+    alignItems: 'center', // Selaraskan item tepat di tengah vertikal
   },
   filterTab: {
-    paddingHorizontal: 14,
+    paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
     backgroundColor: '#F5F5F5',
+    marginRight: 8,
+    justifyContent: 'center', // Pastikan teks berada di tengah tombol
+    alignItems: 'center',
+    minHeight: 36, // Berikan tinggi minimum agar teks punya ruang
   },
   filterTabActive: {
     backgroundColor: '#FFF3E0',
   },
   filterTabText: {
-    fontSize: 12,
+    fontSize: 13, // Sedikit diperbesar agar proporsional
     fontWeight: '500',
-    color: '#999999',
+    color: '#666666',
   },
   filterTabTextActive: {
     color: '#FF6B35',
@@ -707,12 +651,12 @@ const styles = StyleSheet.create({
   filterTabIndicator: {
     position: 'absolute',
     bottom: 0,
-    left: 0,
-    right: 0,
-    height: 2,
+    left: '15%', // Menyesuaikan panjang garis bawah agar tidak mentok
+    right: '15%',
+    height: 3, // Ditebalkan sedikit
     backgroundColor: '#FF6B35',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderTopLeftRadius: 3,
+    borderTopRightRadius: 3,
   },
 
   // Orders List
