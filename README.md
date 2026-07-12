@@ -1,68 +1,76 @@
-# Welcome to your Expo app 👋
+# FlavorDash
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+FlavorDash adalah aplikasi mobile berbasis React Native dan Expo yang dirancang untuk memudahkan pengguna dalam menjelajahi, memilih, dan memesan makanan secara cepat melalui perangkat mobile. Aplikasi ini menampilkan katalog produk, detail makanan, keranjang belanja, proses checkout, serta riwayat pesanan dalam satu pengalaman yang sederhana dan modern.
 
-## Get started
+## Fitur Utama
 
-1. Install dependencies
+- Login dan autentikasi pengguna
+- Tampilan katalog makanan yang menarik
+- Detail produk lengkap dengan informasi menu
+- Keranjang belanja dan proses pembayaran
+- Halaman wishlist dan riwayat pesanan
+- Integrasi mock API untuk data produk dan transaksi
 
-   ```bash
-   npm install
-   ```
+## Screenshot Aplikasi
 
-2. Start the app
+Berikut beberapa tampilan utama dari aplikasi FlavorDash:
 
-   ```bash
-   npx expo start
-   ```
+![Halaman login](screenshot/ss1.png)
+*Halaman login sebagai pintu masuk pengguna ke aplikasi.*
 
-In the output, you'll find options to open the app in a
+![Katalog makanan](screenshot/ss2.png)
+*Halaman katalog menampilkan berbagai pilihan makanan dengan tampilan yang rapi dan informatif.*
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+![Detail produk](screenshot/ss3.png)
+*Halaman detail produk memudahkan pengguna melihat informasi lengkap sebelum memesan.*
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+![Proses checkout](screenshot/ss4.png)
+*Halaman checkout menampilkan alur pemesanan dengan tampilan yang sederhana dan mudah dipahami.*
 
-## Get a fresh project
+## Analisis
 
-When you're ready, run:
+### 1. Alasan Penggunaan Flexbox dan Ukuran Proporsional
+
+Flexbox digunakan karena sangat cocok untuk menyusun elemen UI secara fleksibel dan konsisten pada berbagai ukuran layar. Dengan Flexbox, komponen seperti header, konten, tombol, dan card produk dapat diatur secara otomatis agar tetap rapi saat digunakan di layar kecil maupun besar. Penggunaan ukuran proporsional seperti `flex` dan persentase juga penting agar tampilan tidak pecah saat perangkat memiliki resolusi yang berbeda. Pendekatan ini membuat desain menjadi lebih responsif, mudah dipelihara, dan nyaman digunakan oleh pengguna.
+
+### 2. Perbedaan Stateful Authentication dan Stateless Authentication (JWT)
+
+Stateful Authentication menyimpan informasi sesi pengguna di server, sehingga server perlu mengingat status login setiap pengguna. Biasanya pendekatan ini membutuhkan penyimpanan session ID di server dan pemeriksaan berulang saat pengguna mengakses layanan.
+
+Sementara itu, Stateless Authentication tidak menyimpan sesi di server. Informasi pengguna disimpan langsung di token, seperti JWT, yang dikirimkan ke setiap request. Server hanya memverifikasi token tersebut tanpa perlu mengingat sesi sebelumnya.
+
+### 3. Alasan Pemilihan JWT pada Aplikasi Mobile
+
+JWT dipilih karena cocok untuk aplikasi mobile yang membutuhkan autentikasi sederhana, cepat, dan efisien. Token dapat disimpan di perangkat dan dikirimkan saat diperlukan, sehingga proses login menjadi lebih ringan dan tidak bergantung pada session storage di server. Selain itu, JWT juga mendukung komunikasi yang lebih fleksibel untuk API dan cocok digunakan pada aplikasi yang memerlukan autentikasi antar request secara praktis.
+
+## Cara Menjalankan Project
+
+### 1. Install dependency
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Jalankan aplikasi
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-Run Mock API
-Proyek ini menggunakan JSON Server untuk menyediakan mock data selama pengembangan.
-
-Install dependencies (jika belum):
-
-```Bash
-npm install json-server
-Jalankan Mock API:
+```bash
+npx expo start
 ```
 
-```Bash
+### 3. Jalankan mock API
+
+```bash
 npm run mock-api
-Server akan berjalan di http://localhost:3000 atau IP lokal kamu.
 ```
-Endpoint:
+
+Mock API akan berjalan di:
+
 ```bash
-Data Product: http://localhost:3000/products
+http://localhost:3000
+```
+
+Endpoint sample:
+
+```bash
+http://localhost:3000/products
 ```
