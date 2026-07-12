@@ -15,17 +15,26 @@ FlavorDash adalah aplikasi mobile berbasis React Native dan Expo yang dirancang 
 
 Berikut beberapa tampilan utama dari aplikasi FlavorDash:
 
-![Halaman login](screenshot/ss1.png)
-*Halaman login sebagai pintu masuk pengguna ke aplikasi.*
-
-![Katalog makanan](screenshot/ss2.png)
-*Halaman katalog menampilkan berbagai pilihan makanan dengan tampilan yang rapi dan informatif.*
-
-![Detail produk](screenshot/ss3.png)
-*Halaman detail produk memudahkan pengguna melihat informasi lengkap sebelum memesan.*
-
-![Proses checkout](screenshot/ss4.png)
-*Halaman checkout menampilkan alur pemesanan dengan tampilan yang sederhana dan mudah dipahami.*
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="screenshot/ss1.png" width="220" alt="Halaman detail pesanan" /><br/>
+      </td>
+      <td align="center">
+        <img src="screenshot/ss2.png" width="220" alt="Katalog makanan" /><br/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="screenshot/ss3.png" width="220" alt="Detail produk" /><br/>
+      </td>
+      <td align="center">
+        <img src="screenshot/ss4.png" width="220" alt="Proses checkout" /><br/>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## Analisis
 
