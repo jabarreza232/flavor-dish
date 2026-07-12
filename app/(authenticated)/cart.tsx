@@ -15,29 +15,25 @@ import { useApp } from '../context/AppContext';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useFocusEffect } from 'expo-router';
 
-// Sesuaikan interface jika kamu sudah memisahkannya ke file tipe
 export interface Product {
     id: string;
     name: string;
     price: number;
     image: string;
-    [key: string]: any; // Untuk properti lainnya dari API
+    [key: string]: any; 
 }
 
 export default function CartScreen() {
     const { cartItems, addToCart, removeFromCart } = useApp();
     const router = useRouter();
     
-    // State untuk menyimpan data dari API dan status loading
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
 
-    // Fungsi untuk mengambil data produk
     const fetchCartProducts = useCallback(async () => {
         try {
             setLoading(true);
             
-            // Penyesuaian IP untuk Android Emulator (10.0.2.2) atau iOS/Web (localhost)
             const apiUrl = Platform.OS === 'android' 
                 ? 'http://10.0.2.2:3000/products' 
                 : 'http://localhost:3000/products';
@@ -60,14 +56,12 @@ export default function CartScreen() {
         }
     }, []);
 
-    // Gunakan useFocusEffect agar data selalu ter-refresh setiap kali user membuka tab Keranjang
     useFocusEffect(
         useCallback(() => {
             fetchCartProducts();
         }, [fetchCartProducts])
     );
 
-    // 1. Ambil detail produk dari API yang jumlahnya di cartItems lebih dari 0
     const cartListData = products
         .filter(p => cartItems[p.id] > 0)
         .map(p => ({
@@ -75,10 +69,24 @@ export default function CartScreen() {
             quantity: cartItems[p.id]
         }));
 
-    // 2. Hitung Total Pembayaran
     const totalPrice = cartListData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    // Tampilan saat sedang mengambil data dari API
+    // FUNGSIONALITAS BARU: Mengarahkan ke halaman metode pembayaran
+    const handleCheckout = () => {
+        if (cartListData.length === 0) {
+            Alert.alert('Keranjang Kosong', 'Silakan pilih makanan terlebih dahulu sebelum melakukan pesanan.');
+            return;
+        }
+
+        router.push({
+            pathname: '/(authenticated)/payment',
+            params: {
+                items: JSON.stringify(cartListData),
+                total: totalPrice
+            }
+        });
+    };
+
     if (loading) {
         return (
             <SafeAreaView style={[styles.container, styles.centerContainer]}>
@@ -104,7 +112,6 @@ export default function CartScreen() {
                 contentContainerStyle={styles.listContent}
                 renderItem={({ item }) => (
                     <View style={styles.cartCard}>
-                        {/* Menggunakan property image dari JSON endpoint */}
                         <Image source={{ uri: item.image }} style={styles.image} />
                         <View style={styles.info}>
                             <Text style={styles.name} numberOfLines={1}>{item.name}</Text>
@@ -120,7 +127,7 @@ export default function CartScreen() {
                                 <Text style={styles.qtyText}>{item.quantity}</Text>
                                 <TouchableOpacity 
                                     style={styles.qtyBtn} 
-                                    onPress={() => addToCart(item)} // addToCart mengirim seluruh object product
+                                    onPress={() => addToCart(item)} 
                                 >
                                     <Ionicons name="add" size={18} color="#FF6B35" />
                                 </TouchableOpacity>
@@ -145,8 +152,9 @@ export default function CartScreen() {
                         <Text style={styles.totalLabel}>Total Harga</Text>
                         <Text style={styles.totalValue}>Rp {totalPrice.toLocaleString('id-ID')}</Text>
                     </View>
-                    {/* Tombol checkout, bisa diarahkan ke halaman pembayaran selanjutnya */}
-                    <TouchableOpacity style={styles.checkoutBtn}>
+                    
+                    {/* Mengaktifkan fungsi checkout saat tombol diklik */}
+                    <TouchableOpacity style={styles.checkoutBtn} onPress={handleCheckout}>
                         <Text style={styles.checkoutText}>Pesan Sekarang</Text>
                     </TouchableOpacity>
                 </View>

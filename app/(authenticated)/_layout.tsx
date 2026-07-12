@@ -64,8 +64,38 @@ export default function AuthenticatedLayout() {
             swipeEnabled: false,
           }}
         />
-
+    <Drawer.Screen
+          name="detail_food"
+          options={{
+            title: 'Detail Makanan',
+            drawerItemStyle: { display: 'none' }, // Menyembunyikan dari menu
+            drawerLabel: () => null,
+            headerShown: false, // Kita sudah pakai custom header di cart.tsx
+            swipeEnabled: false,
+          }}
+        />
+        <Drawer.Screen
+          name="order-success"
+          options={{
+            title: 'Order Success',
+            drawerItemStyle: { display: 'none' }, // Menyembunyikan dari menu
+            drawerLabel: () => null,
+            headerShown: false, // Kita sudah pakai custom header di cart.tsx
+            swipeEnabled: false,
+          }}
+        />
+           <Drawer.Screen
+          name="payment"
+          options={{
+            title: 'Payment',
+            drawerItemStyle: { display: 'none' }, // Menyembunyikan dari menu
+            drawerLabel: () => null,
+            headerShown: false, // Kita sudah pakai custom header di cart.tsx
+            swipeEnabled: false,
+          }}
+        />
       </Drawer>
+      
     </AppProvider>
 
   );

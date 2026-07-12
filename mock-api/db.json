@@ -4,7 +4,7 @@
         "id": "user-001",
         "email": "user@example.com",
         "password": "password123",
-        "name": "John Doe",
+        "name": "Jabar Reza",
         "phone": "+62812345678",
         "address": "Jl. Merdeka No. 123, Jakarta Selatan"
       }
@@ -18,198 +18,217 @@
         "expiresAt": "2026-05-09T11:15:00Z"
       }
     ],
-  "products": [
-    {
-      "id": "prod-001",
-      "name": "Rendang Ayam Premium",
-      "category": "Masakan Tradisional",
-      "description": "Rendang ayam tradisional dengan bumbu kaya rasa yang autentik",
-      "price": 45000,
-      "originalPrice": 50000,
-      "discount": 10,
-      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=400",
-      "thumbnail": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=400",
-      "rating": 4.8,
-      "reviews": 152,
-      "inStock": true,
-      "quantity": 50,
-      "prepTime": 20,
-      "servings": 4,
-      "ingredients": [
-        "Ayam 1kg",
-        "Santan 400ml",
-        "Cabe merah 8 buah",
-        "Bawang merah 10 siung",
-        "Kunyit 2 ruas",
-        "Garam secukupnya"
-      ],
-      "nutrition": {
-        "calories": 280,
-        "protein": 35,
-        "carbs": 5,
-        "fat": 12
-      },
-      "tags": [
-        "spicy",
-        "traditional",
-        "chicken"
-      ],
-      "createdAt": "2026-01-10T08:00:00Z",
-      "updatedAt": "2026-05-09T10:00:00Z"
+ "products": [  {
+    "id": "prod-001",
+    "restaurantName": "Pondok Makan Nusantara",
+    "restaurantAddress": "Depok, Jawa Barat, Indonesia",
+    "latitude": -6.4025,
+    "longitude": 106.8227,
+    "name": "Rendang Ayam Premium",
+    "category": "Masakan Tradisional",
+    "description": "Rendang ayam tradisional dengan bumbu kaya rasa yang autentik",
+    "price": 45000,
+    "originalPrice": 50000,
+    "discount": 10,
+    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=400",
+    "thumbnail": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=400",
+    "rating": 4.8,
+    "reviews": 152,
+    "inStock": true,
+    "quantity": 50,
+    "prepTime": 20,
+    "servings": 4,
+    "ingredients": [
+      "Ayam 1kg",
+      "Santan 400ml",
+      "Cabe merah 8 buah",
+      "Bawang merah 10 siung",
+      "Kunyit 2 ruas",
+      "Garam secukupnya"
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": 35,
+      "carbs": 5,
+      "fat": 12
     },
-    {
-      "id": "prod-002",
-      "name": "Soto Ayam Kuning",
-      "category": "Sup & Kuah",
-      "description": "Soto ayam dengan kunyit dan jahe pilihan, resep turun temurun",
-      "price": 35000,
-      "originalPrice": 35000,
-      "discount": 0,
-      "image": "https://via.placeholder.com/300x300?text=Soto+Ayam",
-      "thumbnail": "https://via.placeholder.com/120x120?text=SotoAyam",
-      "rating": 4.5,
-      "reviews": 98,
-      "inStock": true,
-      "quantity": 75,
-      "prepTime": 15,
-      "servings": 2,
-      "ingredients": [
-        "Ayam 500g",
-        "Kunyit 3 ruas",
-        "Jahe 2 ruas",
-        "Bawang merah 8 siung",
-        "Kaldu ayam 1 liter",
-        "Garam & merica"
-      ],
-      "nutrition": {
-        "calories": 150,
-        "protein": 20,
-        "carbs": 8,
-        "fat": 4
-      },
-      "tags": [
-        "soup",
-        "warm",
-        "comforting"
-      ],
-      "createdAt": "2026-01-12T08:00:00Z",
-      "updatedAt": "2026-05-09T09:45:00Z"
+    "tags": [
+      "spicy",
+      "traditional",
+      "chicken"
+    ],
+    "createdAt": "2026-01-10T08:00:00Z",
+    "updatedAt": "2026-05-09T10:00:00Z"
+  },
+  {
+    "id": "prod-002",
+    "restaurantName": "Pondok Makan Nusantara",
+    "restaurantAddress": "Depok, Jawa Barat, Indonesia",
+    "latitude": -6.4025,
+    "longitude": 106.8227,
+    "name": "Soto Ayam Kuning",
+    "category": "Sup & Kuah",
+    "description": "Soto ayam dengan kunyit dan jahe pilihan, resep turun temurun",
+    "price": 35000,
+    "originalPrice": 35000,
+    "discount": 0,
+    "image": "https://resepkoki.id/wp-content/uploads/2019/11/Soto-Lamongan.jpg",
+    "thumbnail": "https://resepkoki.id/wp-content/uploads/2019/11/Soto-Lamongan.jpg",
+    "rating": 4.5,
+    "reviews": 98,
+    "inStock": true,
+    "quantity": 75,
+    "prepTime": 15,
+    "servings": 2,
+    "ingredients": [
+      "Ayam 500g",
+      "Kunyit 3 ruas",
+      "Jahe 2 ruas",
+      "Bawang merah 8 siung",
+      "Kaldu ayam 1 liter",
+      "Garam & merica"
+    ],
+    "nutrition": {
+      "calories": 150,
+      "protein": 20,
+      "carbs": 8,
+      "fat": 4
     },
-    {
-      "id": "prod-003",
-      "name": "Gado-Gado Spesial",
-      "category": "Sayuran",
-      "description": "Gado-gado dengan kacang dan saus gurih yang nikmat",
-      "price": 28000,
-      "originalPrice": 32000,
-      "discount": 12,
-      "image": "https://via.placeholder.com/300x300?text=Gado+Gado",
-      "thumbnail": "https://via.placeholder.com/120x120?text=GadoGado",
-      "rating": 4.7,
-      "reviews": 124,
-      "inStock": true,
-      "quantity": 100,
-      "prepTime": 10,
-      "servings": 1,
-      "ingredients": [
-        "Kacang tanah 200g",
-        "Tahu 150g",
-        "Telur 1 butir",
-        "Sayuran segar",
-        "Cabai & bawang",
-        "Gula & garam"
-      ],
-      "nutrition": {
-        "calories": 220,
-        "protein": 15,
-        "carbs": 18,
-        "fat": 10
-      },
-      "tags": [
-        "vegetable",
-        "healthy",
-        "savory"
-      ],
-      "createdAt": "2026-01-15T08:00:00Z",
-      "updatedAt": "2026-05-09T10:30:00Z"
+    "tags": [
+      "soup",
+      "warm",
+      "comforting"
+    ],
+    "createdAt": "2026-01-12T08:00:00Z",
+    "updatedAt": "2026-05-09T09:45:00Z"
+  },
+  {
+    "id": "prod-003",
+    "restaurantName": "Pondok Makan Nusantara",
+    "restaurantAddress": "Depok, Jawa Barat, Indonesia",
+    "latitude": -6.4025,
+    "longitude": 106.8227,
+    "name": "Gado-Gado Spesial",
+    "category": "Sayuran",
+    "description": "Gado-gado dengan kacang dan saus gurih yang nikmat",
+    "price": 28000,
+    "originalPrice": 32000,
+    "discount": 12,
+    "image": "https://awsimages.detik.net.id/community/media/visual/2022/10/08/gado-gado_11.png?w=600&q=90",
+    "thumbnail": "https://awsimages.detik.net.id/community/media/visual/2022/10/08/gado-gado_11.png?w=120&q=90",
+    "rating": 4.7,
+    "reviews": 124,
+    "inStock": true,
+    "quantity": 100,
+    "prepTime": 10,
+    "servings": 1,
+    "ingredients": [
+      "Kacang tanah 200g",
+      "Tahu 150g",
+      "Telur 1 butir",
+      "Sayuran segar",
+      "Cabai & bawang",
+      "Gula & garam"
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": 15,
+      "carbs": 18,
+      "fat": 10
     },
-    {
-      "id": "prod-004",
-      "name": "Nasi Kuning Festive",
-      "category": "Nasi & Carbs",
-      "description": "Nasi kuning dengan telur dadar dan lauk kaya rasa",
-      "price": 32000,
-      "originalPrice": 38000,
-      "discount": 16,
-      "image": "https://via.placeholder.com/300x300?text=Nasi+Kuning",
-      "thumbnail": "https://via.placeholder.com/120x120?text=NasiKuning",
-      "rating": 4.6,
-      "reviews": 87,
-      "inStock": true,
-      "quantity": 60,
-      "prepTime": 25,
-      "servings": 2,
-      "ingredients": [
-        "Beras 300g",
-        "Santan 200ml",
-        "Kunyit 2 ruas",
-        "Bawang putih 4 siung",
-        "Telur 2 butir",
-        "Garam & kaldu"
-      ],
-      "nutrition": {
-        "calories": 320,
-        "protein": 12,
-        "carbs": 48,
-        "fat": 8
-      },
-      "tags": [
-        "rice",
-        "festive",
-        "aromatic"
-      ],
-      "createdAt": "2026-02-01T08:00:00Z",
-      "updatedAt": "2026-05-09T11:00:00Z"
+    "tags": [
+      "vegetable",
+      "healthy",
+      "savory"
+    ],
+    "createdAt": "2026-01-15T08:00:00Z",
+    "updatedAt": "2026-05-09T10:30:00Z"
+  },
+  {
+    "id": "prod-004",
+    "restaurantName": "Pondok Makan Nusantara",
+    "restaurantAddress": "Depok, Jawa Barat, Indonesia",
+    "latitude": -6.4025,
+    "longitude": 106.8227,
+    "name": "Nasi Kuning Festive",
+    "category": "Nasi & Carbs",
+    "description": "Nasi kuning dengan telur dadar dan lauk kaya rasa",
+    "price": 32000,
+    "originalPrice": 38000,
+    "discount": 16,
+    "image": "https://static.vecteezy.com/system/resources/previews/011/111/893/large_2x/nasi-kuning-or-yellow-rice-in-cone-shape-indonesian-festive-rice-dish-presentation-with-some-condiments-like-chicken-egg-tempe-cucumber-chili-wih-red-napkin-free-photo.jpeg",
+    "thumbnail": "https://static.vecteezy.com/system/resources/previews/011/111/893/large_2x/nasi-kuning-or-yellow-rice-in-cone-shape-indonesian-festive-rice-dish-presentation-with-some-condiments-like-chicken-egg-tempe-cucumber-chili-wih-red-napkin-free-photo.jpeg",
+    "rating": 4.6,
+    "reviews": 87,
+    "inStock": true,
+    "quantity": 60,
+    "prepTime": 25,
+    "servings": 2,
+    "ingredients": [
+      "Beras 300g",
+      "Santan 200ml",
+      "Kunyit 2 ruas",
+      "Bawang putih 4 siung",
+      "Telur 2 butir",
+      "Garam & kaldu"
+    ],
+    "nutrition": {
+      "calories": 320,
+      "protein": 12,
+      "carbs": 48,
+      "fat": 8
     },
-    {
-      "id": "prod-005",
-      "name": "Satay Daging Premium",
-      "category": "Daging",
-      "description": "Sate daging sapi premium dengan bumbu kacang authentic",
-      "price": 55000,
-      "originalPrice": 65000,
-      "discount": 15,
-      "image": "https://via.placeholder.com/300x300?text=Sate+Daging",
-      "thumbnail": "https://via.placeholder.com/120x120?text=SateDaging",
-      "rating": 4.9,
-      "reviews": 203,
-      "inStock": true,
-      "quantity": 40,
-      "prepTime": 30,
-      "servings": 4,
-      "ingredients": [
-        "Daging sapi 600g",
-        "Kacang tanah 250g",
-        "Cabe merah 5 buah",
-        "Bawang merah 8 siung",
-        "Gula & garam",
-        "Lada hitam"
-      ],
-      "nutrition": {
-        "calories": 380,
-        "protein": 40,
-        "carbs": 12,
-        "fat": 18
-      },
-      "tags": [
-        "beef",
-        "grilled",
-        "premium"
-      ],
-      "createdAt": "2026-02-10T08:00:00Z",
-      "updatedAt": "2026-05-09T10:45:00Z"
-    }
-  ],
+    "tags": [
+      "rice",
+      "festive",
+      "aromatic"
+    ],
+    "createdAt": "2026-02-01T08:00:00Z",
+    "updatedAt": "2026-05-09T11:00:00Z"
+  },
+  {
+    "id": "prod-005",
+    "restaurantName": "Pondok Makan Nusantara",
+    "restaurantAddress": "Depok, Jawa Barat, Indonesia",
+    "latitude": -6.4025,
+    "longitude": 106.8227,
+    "name": "Sate Daging Premium",
+    "category": "Daging",
+    "description": "Sate daging sapi premium dengan bumbu kacang authentic",
+    "price": 55000,
+    "originalPrice": 65000,
+    "discount": 15,
+    "image": "https://assets.unileversolutions.com/v1/127253719.png",
+    "thumbnail": "https://assets.unileversolutions.com/v1/127253719.png",
+    "rating": 4.9,
+    "reviews": 203,
+    "inStock": true,
+    "quantity": 40,
+    "prepTime": 30,
+    "servings": 4,
+    "ingredients": [
+      "Daging sapi 600g",
+      "Kacang tanah 250g",
+      "Cabe merah 5 buah",
+      "Bawang merah 8 siung",
+      "Gula & garam",
+      "Lada hitam"
+    ],
+    "nutrition": {
+      "calories": 380,
+      "protein": 40,
+      "carbs": 12,
+      "fat": 18
+    },
+    "tags": [
+      "beef",
+      "grilled",
+      "premium"
+    ],
+    "createdAt": "2026-02-10T08:00:00Z",
+    "updatedAt": "2026-05-09T10:45:00Z"
+  }
+],
   "orders": [
     {
       "id": "order-001",
